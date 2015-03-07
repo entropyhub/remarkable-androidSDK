@@ -1,0 +1,69 @@
+apply plugin: 'android-library'
+
+ext {
+    PUBLISH_GROUP_ID = 'com.thisisentropy'
+    PUBLISH_ARTIFACT_ID = 'remarkablesdk'
+    PUBLISH_VERSION = '1.0.0'
+}
+
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'io.realm:realm-android:0.79.0'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.picasso:picasso:2.5.0'
+
+
+
+}
+
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+
+task jarTask(type: Jar) {
+    baseName="my-sdk-android"
+    from 'src/main/java'
+}
+
+task createJarWithDependencies(type: Jar) {
+    baseName = "my-sdk-android-jar-with-dependencies"
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+
+    }
+
+    with jarTask
+}
+
+configurations {
+    jarConfiguration
+}
+
+artifacts {
+    jarConfiguration jarTask
+}
