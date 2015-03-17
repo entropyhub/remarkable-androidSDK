@@ -25,11 +25,11 @@ Which should look something like this:
       
 3: Finally, add the following to your projects app/build.gradle file
 
-      compile(name:'RemarkableSDK', ext:'aar')
+      compile(name:'RemarkableSDK-1.0.0', ext:'aar')
 
 Which should look something like this:
 
       dependencies {
           //Your other dependencies
-          compile(name:'RemarkableSDK', ext:'aar')
+          compile(name:'RemarkableSDK-1.0.0', ext:'aar')
       }
