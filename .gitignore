@@ -1,4 +1,4 @@
-.gradle
+*.gradle
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
@@ -17,3 +17,21 @@ local.properties
 proguard/
 *.log
 gen-external-apklibs
+
+.idea/scopes/scope_settings.xml
+
+build.gradle
+
+gradlew.bat
+
+RemarkableSDK.iml
+
+gradle.properties
+
+gradlew
+
+app/proguard-rules.pro
+
+app/app.iml
+
+.idea/copyright/profiles_settings.xml
