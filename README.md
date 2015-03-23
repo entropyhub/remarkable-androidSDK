@@ -2,7 +2,7 @@
 
 To use this library, simply:
 
-1: Download the AAR file <a href="https://github.com/entropyhub/remarkable-androidSDK/releases/download/1.0/RemarkableSDK-1.0.0.aar">HERE</a> and copy into your 'libs' folder.
+1: Download the AAR file <a href="https://github.com/entropyhub/remarkable-androidSDK/releases/download/1.0.1/RemarkableSDK-1.0.1.aar">HERE</a> and copy into your 'libs' folder.
 
 
 2: Add the following to your apps /myproject/build.gradle file
